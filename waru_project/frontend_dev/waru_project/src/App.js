@@ -1,23 +1,48 @@
-import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function App() {
+  const navigate = useNavigate();
+  // VARIABLES
+
+  const [error, setError] = useState("");
+
+  // FUNCIONES
+  const sign_in = async (event) => {
+    try {
+      event.preventDefault();
+      navigate("/ASignin");
+    } catch (error) {
+      setError("Algo salio mal");
+    }
+  };
+
+  const log_in = async (event) => {
+    try {
+      event.preventDefault();
+      navigate("/ALogin");
+    } catch (error) {
+      setError("Algo salio mal");
+    }
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Bienvenido a Warú</h1>
+      <h2>Sign In</h2>
+      <form onSubmit={sign_in}>
+        <button className="button" type="submit">
+          Sign In
+        </button>
+      </form>
+      <h2>Log In</h2>
+      <form onSubmit={log_in}>
+        <button className="button" type="submit">
+          Log In
+        </button>
+      </form>
+      {error && <p>{error}</p>}
     </div>
   );
 }
