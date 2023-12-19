@@ -5,13 +5,12 @@ import { useNavigate } from "react-router-dom";
 function App() {
   const navigate = useNavigate();
   // VARIABLES
-
   const [error, setError] = useState("");
 
   // FUNCIONES
   const sign_in = async (event) => {
+    event.preventDefault();
     try {
-      event.preventDefault();
       navigate("/ASignin");
     } catch (error) {
       setError("Algo salio mal");
@@ -19,8 +18,8 @@ function App() {
   };
 
   const log_in = async (event) => {
+    event.preventDefault();
     try {
-      event.preventDefault();
       navigate("/ALogin");
     } catch (error) {
       setError("Algo salio mal");
