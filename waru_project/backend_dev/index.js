@@ -5,7 +5,6 @@ const db = require("./db");
 const User = require("./models/users");
 const bcrypt = require("bcrypt"); // ayuda a encriptar el texto
 const jwt = require("jsonwebtoken"); // genera token para las encriptadas
-
 const jwkey = "qjoplenchfil";
 
 const app = express();
