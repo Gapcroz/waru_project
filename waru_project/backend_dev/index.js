@@ -89,6 +89,7 @@ app.post("/api/login/", async function (req, res) {
         return res.status(200).json({
           msg: "log in exitoso",
           token: token,
+          success: true,
         });
       }
     }
