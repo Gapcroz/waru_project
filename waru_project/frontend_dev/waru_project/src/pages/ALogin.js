@@ -2,7 +2,8 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BackButton from "../components/BackButton";
+import Header from "../layouts/Header";
+
 
 function ALogin() {
   const navigate = useNavigate();
@@ -35,8 +36,8 @@ function ALogin() {
 
   return (
     <div>
+      <Header />
       <header className="App">
-        <BackButton />
         <h1>Bienvenido a Warú</h1>
       </header>
       <body>

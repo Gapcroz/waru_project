@@ -2,8 +2,9 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../layouts/Header";
 
-function aSignin() {
+function ASignin() {
   const navigate = useNavigate();
   // VARIABLES
   const [username, setUsername] = useState("");
@@ -33,6 +34,7 @@ function aSignin() {
 
   return (
     <div>
+      <Header />
       <h1>Bienvenido a Warú</h1>
       <h2>Sign In</h2>
       <form onSubmit={signin}>
@@ -68,4 +70,4 @@ function aSignin() {
   );
 }
 
-export default aSignin;
+export default ASignin;
