@@ -22,7 +22,6 @@ function ALogin() {
       });
       if (response.data.success === true) {
         console.log(response.data);
-        alert("Log in exitoso");
         navigate("/BMenu");
       } else {
         console.log(response.data);

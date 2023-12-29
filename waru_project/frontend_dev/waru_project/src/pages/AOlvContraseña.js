@@ -1,6 +1,6 @@
 import React from "react";
 
-function aOlvContraseña() {
+function AOlvContraseña() {
   return (
     <div>
       <h1>Olvide mi contraseña</h1>
@@ -8,4 +8,4 @@ function aOlvContraseña() {
   );
 }
 
-export default aOlvContraseña;
+export default AOlvContraseña;

@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-function aSignin() {
+function ASignin() {
   const navigate = useNavigate();
   // VARIABLES
   const [username, setUsername] = useState("");
@@ -68,4 +68,4 @@ function aSignin() {
   );
 }
 
-export default aSignin;
+export default ASignin;
