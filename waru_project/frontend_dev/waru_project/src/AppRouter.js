@@ -6,6 +6,7 @@ import ALogin from "./pages/ALogin";
 import AOlvContraseña from "./pages/AOlvContraseña";
 import BMenu from "./pages/BMenu";
 import BCuestionario from "./pages/BCuestionario";
+import BRespuestas from "./pages/BRespuestas";
 
 const AppRouter = () => {
   return (
@@ -17,6 +18,7 @@ const AppRouter = () => {
         <Route path="/AOlvContraseña" element={<AOlvContraseña />} />
         <Route path="/BMenu" element={<BMenu />} />
         <Route path="/BCuestionario" element={<BCuestionario/>}/>
+        <Route path="/BRespuestas" element={<BRespuestas/>}/>
       </Routes>
     </Router>
   );

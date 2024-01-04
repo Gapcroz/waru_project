@@ -15,6 +15,14 @@ function BMenu() {
       setError("Algo salio mal");
     }
   };
+  const respuestas = async (event)=>{
+    event.preventDefault();
+    try{
+      navigate("/BRespuestas");
+    } catch (error){
+      setError("Algo salio mal");
+    }
+  };
   return (
     <div>
       <h1>Menú</h1>
@@ -23,9 +31,14 @@ function BMenu() {
           test
         </button>
       </form>
+      <form onSubmit={respuestas}>
+        <button className="button" type="submit">
+          respuestas
+        </button>
+      </form>
       {error && <p>{error}</p>}
     </div>
   );
-}
+};
 
 export default BMenu;

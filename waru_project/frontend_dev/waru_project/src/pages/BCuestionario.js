@@ -24,17 +24,17 @@ function BCuestionario() {
         navigate("/Bmenu");
       } else {
         console.log(response.data);
-        alert("No se guardaron tus respuestas");
         navigate("/Bmenu");
       }
     } catch (error) {
       setError("no ingresaron los datos");
+      navigate("/Bmenu");
     }
   };
   return (
     <div>
       <h1>Cuestionario</h1>
-      <form onSubmit={respuestas}>
+      <form onSubmit={respuestas} layout="vertical" wrapperCol={{ span: 18 }}>
         <Form.Item
           name="pregunta1"
           label="¿como se llama tu empresa?"
@@ -59,12 +59,12 @@ function BCuestionario() {
           <input />
         </Form.Item>
         <button className="button" type="submit">
-          completar
+          Finalizar
         </button>
         {error && <p>{error}</p>}
       </form>
     </div>
   );
-}
+};
 
 export default BCuestionario;

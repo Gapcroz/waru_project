@@ -3,7 +3,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const db = require("./db");
 const signLogin = require("./modules/signLogin");
-const Respaneg = require("./models/respaneg");
+const quiz = require("./modules/quiz");
 
 const app = express();
 
@@ -39,25 +39,18 @@ app.post("/api/login/", function (req, res) {
   signLogin.logIn(req, res);
 });
 
-app.post("/api/resp-a-neg", async function (req, res) {
-  try {
-    const { pregunta1, pregunta2 } = req.body;
-    const respaneg = new Respaneg({ pregunta1, pregunta2 });
-    const createdRespuesta = await respaneg.save();
-    return res.status(200).json({
-      msg: "Datos almacenados en MongoDB",
-      respuesta: createdRespuesta._id,
-      success: true,
-    });
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({
-      msg: "Error al almacenar datos",
-      success: false,
-    });
-  }
+app.post("/api/resp-a-neg", function (req, res) {
+  quiz.quizRespaneg(req, res);
 });
 
+app.get("/api/respuestas", async (req, res) => {
+  try {
+    const respuesta = await quiz.find();
+    res.send(respuesta);
+  } catch (error) {
+    console.log(error);
+  }
+});
 // CRUD
 db.connect();
 const port = 3001;
