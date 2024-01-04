@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../layouts/Header";
 
 function ASignin() {
   const navigate = useNavigate();
@@ -33,6 +34,7 @@ function ASignin() {
 
   return (
     <div>
+      <Header />
       <h1>Bienvenido a Warú</h1>
       <h2>Sign In</h2>
       <form onSubmit={signin}>
